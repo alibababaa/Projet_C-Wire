@@ -214,27 +214,49 @@ if [ "$station_type" = "lv" ] && [ "$consumer_type" = "all" ]; then
     head -n 10 tmp/lv_all_diff.csv >> "$minmax_file"
     tail -n 10 tmp/lv_all_diff.csv >> "$minmax_file"
 
+    # Séparer les postes les plus chargés et les moins chargés
+    pluscharge_file="tmp/10pluscharge.csv"
+    moinscharge_file="tmp/10moinscharge.csv"
+
+    head -n 10 tmp/lv_all_diff.csv > "$pluscharge_file"
+    tail -n 10 tmp/lv_all_diff.csv > "$moinscharge_file"
+
+    # Inverser les valeurs pour les barres vers le haut (valeurs négatives doivent être positives)
+    awk -F":" 'BEGIN {OFS=":"} {if ($4 < 0) $4=-$4; print $0}' "$pluscharge_file" > tmp/10pluscharge_adjusted.csv
+    awk -F":" 'BEGIN {OFS=":"} {if ($4 < 0) $4=-$4; print $0}' "$moinscharge_file" > tmp/10moinscharge_adjusted.csv
+
+    # Générer le graphique avec gnuplot
     if command -v gnuplot &>/dev/null; then
         gnuplot <<EOF
 set terminal png size 800,600
 set output "graphs/lv_all_minmax.png"
 set datafile separator ":"
-set title "Top 10 et Bottom 10 LV Stations"
+set title "Top 10 Plus Chargés et Moins Chargés LV Stations"
 set xlabel "Stations"
 set ylabel "Diff (Capacité-Consommation)"
 set style data histograms
 set style fill solid border -1
 set boxwidth 0.9
-plot "${minmax_file}" using 4:xtic(1) title 'Diff'
+set xtics rotate by -45
+
+# Graphique pour les 10 plus chargés (vert) et les 10 moins chargés (rouge)
+plot "tmp/10pluscharge_adjusted.csv" using 4:xtic(1) title '10 Plus Chargés' lc rgb "green", \
+     "tmp/10moinscharge_adjusted.csv" using 4:xtic(1) title '10 Moins Chargés' lc rgb "red"
 EOF
         echo "Graphique généré : graphs/lv_all_minmax.png"
     else
         echo "Gnuplot non installé, pas de graphique généré."
     fi
-fi
+fi # Fermeture du dernier bloc 'if'
 
-end_time=$(date +%s.%N)
-elapsed_time=$(echo "$end_time - $start_time" | bc)
+# Fin du traitement
+end_time=$(date +%s%N)
+elapsed_time=$(echo "scale=3; ($end_time - $start_time) / 1000000000" | bc)
+
+# Si le temps est trop court, définissez une durée minimale
+if (( $(echo "$elapsed_time < 0.001" | bc -l) )); then
+    elapsed_time="0.001"
+fi
 
 echo "Traitement terminé."
 echo "Durée du traitement : $elapsed_time sec"
