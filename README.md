@@ -103,16 +103,8 @@ Fichiers temporaires : Stockés dans le dossier tmp pour un usage intermédiaire
 
 Graphiques : Si demandés, ils seront sauvegardés dans le dossier graphs.
 
-Auteurs
 
-Yann AGBOTA
-
-Ilyes FELLAH
-
-Ali-ulas YILDIZ
-
-
-Notes supplémentaires:
+## Notes supplémentaires:
 
 Le projet est conçu pour fonctionner avec un fichier CSV volumineux contenant plusieurs millions de lignes. Assurez-vous que votre environnement dispose des ressources nécessaires.
 
@@ -120,3 +112,10 @@ L'application effectue des vérifications rigoureuses sur les données d'entrée
 
 Toutes les allocations dynamiques sont libérées avant la fin de l'exécution pour garantir une gestion optimale de la mémoire.
 
+## Auteurs
+
+Yann AGBOTA
+
+Ilyes FELLAH
+
+Ali-ulas YILDIZ
