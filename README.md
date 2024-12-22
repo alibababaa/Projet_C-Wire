@@ -119,6 +119,8 @@ L'application effectue des vérifications rigoureuses sur les données d'entrée
 
 Toutes les allocations dynamiques sont libérées avant la fin de l'exécution pour garantir une gestion optimale de la mémoire.
 
+L'utilisation de  "static" devant les fonctions dans avl_tree.c dans notre code rend ces fonctions accessibles uniquement dans le fichier où elles sont définies, empêchant leur utilisation ailleurs. Cela aide à organiser le code en cachant les détails qui ne doivent pas être utilisés en dehors de ce fichier.
+
 ## Auteurs
 
 Yann AGBOTA
