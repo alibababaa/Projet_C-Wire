@@ -47,20 +47,28 @@ Téléchargez le projet depuis le dépôt GitHub.
 
 Décompressez le fichier ZIP si nécessaire :
 
-unzip EnergyFlow-main.zip
-cd EnergyFlow-main
+```bash
+      unzip Projet_C-Wire.zip
+
+```
 
 Donnez les permissions d'exécution au script Shell :
 
-chmod +x c-wire.sh
+```bash
+      chmod +x c-wire.sh
+```
 
 ## Utilisation
 
 Pour exécuter le programme, utilisez la commande suivante :
 
-./c-wire.sh -f $TRAJET/vers/le/fichier/d'entrée/à/traiter -s letypedestation -c letypedeconsommateur -o $TRAJET/vers/le/fichier/de sortie/filtré
-
-Exemple : ./c-wire.sh -f $HOME/Documents/Projet_C-Wire/input/c-wire_v00.dat -s hva -c comp -o $HOME/Documents/Projet_C-Wire/tests/output.csv
+```bash
+./c-wire.sh -f $TRAJET/vers/le/fichier/dentrée/à/traiter -s typedestation -c typedeconsommateur -o $TRAJET/vers/le/fichier/de sortie/filtré
+```
+Exemple :
+```bash
+./c-wire.sh -f $HOME/Documents/Projet_C-Wire/input/c-wire_v00.dat -s hva -c comp -o $HOME/Documents/Projet_C-Wire/tests/output.csv
+```
 
 ## Options disponibles :
 
@@ -84,16 +92,15 @@ all : Tous les consommateurs.
 
 -o : Chemin vers le fichier de sortie filtré.
 
-## Exemple d'exécution :
-
-./c-wire.sh -f /home/user/input/data.csv -s hva -c comp -o /home/user/output/hva_comp.csv
 
 ## Aide intégrée :
 
 Si la commande d'exécution est incorrecte, un message d'erreur détaillé s'affichera, précisant les options attendues.
 Pour afficher l'aide manuellement :
 
+```bash
 ./c-wire.sh -h
+```
 
 Structure des fichiers générés
 
