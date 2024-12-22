@@ -1,5 +1,7 @@
 #include "avl_tree.h"
-
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 static int max(int a, int b) { return a > b ? a : b; }
 
@@ -134,3 +136,4 @@ int comparer_par_capacite(const void* a, const void* b) {
     if (A->capacite > B->capacite) return 1;
     return 0;
 }
+
