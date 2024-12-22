@@ -4,13 +4,13 @@
 
 Cette application permet de gérer le flux électrique dans un pays représentant environ un quart de la superficie de la France métropolitaine. Elle inclut des fonctionnalités pour :
 
-  Afficher les stations de distribution, les centrales électriques et les consommateurs.
+- Afficher les stations de distribution, les centrales électriques et les consommateurs.
 
-  Visualiser les capacités de production et de consommation énergétique.
+- Visualiser les capacités de production et de consommation énergétique.
 
-  Centraliser et simplifier l'accès à ces informations pour différents utilisateurs potentiels.
+- Centraliser et simplifier l'accès à ces informations pour différents utilisateurs potentiels.
 
-  L'objectif principal est d'analyser les données de distribution d'énergie et de détecter des situations de surproduction ou de sous-production, tout en identifiant la proportion d'énergie consommée par les entreprises et les particuliers.
+- L'objectif principal est d'analyser les données de distribution d'énergie et de détecter des situations de surproduction ou de sous-    production, tout en identifiant la proportion d'énergie consommée par les entreprises et les particuliers.
 
 ## Fonctionnalités
 
