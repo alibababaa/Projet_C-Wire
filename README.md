@@ -1,6 +1,6 @@
-Projet C-Wire - Gestion du Flux Électrique
+# Projet C-Wire - Gestion du Flux Électrique
 
-Description 
+## Description 
 
 Cette application permet de gérer le flux électrique dans un pays représentant environ un quart de la superficie de la France métropolitaine. Elle inclut des fonctionnalités pour :
 
@@ -12,7 +12,7 @@ Cette application permet de gérer le flux électrique dans un pays représentan
 
   L'objectif principal est d'analyser les données de distribution d'énergie et de détecter des situations de surproduction ou de sous-production, tout en identifiant la proportion d'énergie consommée par les entreprises et les particuliers.
 
-Fonctionnalités
+## Fonctionnalités
 
 Filtrage : Extraction des données pertinentes à partir d'un fichier CSV massif contenant des informations sur la distribution énergétique.
 
@@ -24,7 +24,7 @@ Création de graphiques : Génération optionnelle de graphiques pour visualiser
 
 Messages d'erreur : Aide intégrée pour corriger les erreurs de commande ou de paramètres.
 
-Prérequis
+## Prérequis
 
 Système d'exploitation : Linux.
 
@@ -41,9 +41,9 @@ stdio.h pour les entrées/sorties.
 
 Dépendances externes : GnuPlot 
 
-Installation
+## Installation
 
-Clonez ou téléchargez le projet depuis le dépôt GitHub.
+Téléchargez le projet depuis le dépôt GitHub.
 
 Décompressez le fichier ZIP si nécessaire :
 
@@ -54,11 +54,7 @@ Donnez les permissions d'exécution au script Shell :
 
 chmod +x c-wire.sh
 
-(Compilez le programme en utilisant le fichier Makefile fourni :
-
-make)
-
-Utilisation
+## Utilisation
 
 Pour exécuter le programme, utilisez la commande suivante :
 
@@ -66,7 +62,7 @@ Pour exécuter le programme, utilisez la commande suivante :
 
 Exemple : ./c-wire.sh -f $HOME/Documents/Projet_C-Wire/input/c-wire_v00.dat -s hva -c comp -o $HOME/Documents/Projet_C-Wire/tests/output.csv
 
-Options disponibles :
+## Options disponibles :
 
 -f : Chemin vers le fichier CSV d'entrée contenant les données de distribution énergétique.
 
@@ -88,11 +84,11 @@ all : Tous les consommateurs.
 
 -o : Chemin vers le fichier de sortie filtré.
 
-Exemple d'exécution :
+## Exemple d'exécution :
 
 ./c-wire.sh -f /home/user/input/data.csv -s hva -c comp -o /home/user/output/hva_comp.csv
 
-Aide intégrée :
+## Aide intégrée :
 
 Si la commande d'exécution est incorrecte, un message d'erreur détaillé s'affichera, précisant les options attendues.
 Pour afficher l'aide manuellement :
@@ -115,11 +111,8 @@ Ilyes FELLAH
 
 Ali-ulas YILDIZ
 
-(Remerciements
 
-Merci à tous les contributeurs pour leur soutien au développement de ce projet.)
-
-Notes supplémentaires
+Notes supplémentaires:
 
 Le projet est conçu pour fonctionner avec un fichier CSV volumineux contenant plusieurs millions de lignes. Assurez-vous que votre environnement dispose des ressources nécessaires.
 
