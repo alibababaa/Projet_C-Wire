@@ -1,8 +1,5 @@
 #include "avl_tree.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <errno.h>
+
 
 void erreurCritique(const char* message) {
     fprintf(stderr, "Erreur : %s\n", message);
